@@ -1,0 +1,30 @@
+<h1 class="mb-2 font-semibold tracking-tighter text-xl flex items-center gap-1 text-purple-600">
+  <span>
+    {% include '_includes/icons/Clock.html' with ratio="1em" %}
+  </span>
+  <span>History</span>
+</h1>
+
+<div class="divide-y divide-slate-200 max-h-[400px] overflow-y-scroll p-2">
+
+  {% for row in data %}
+
+    <div class="flex items-center gap-1 hover:bg-slate-200 px-2">
+
+      <span class="font-semibold">
+        {{ row.ticker_symbol }}
+      </span>
+      <span class="text-xs text-slate-500">
+        {{ row.date }}
+      </span>
+
+      <div class="ml-auto flex items-center font-bold tracking-tighter gap-2">
+        <span class="text-green-600">{{ row.open_price }}</span>
+        <span class="text-red-600">{{ row.close_price }}</span>
+      </div>
+
+    </div>
+
+  {% endfor %}
+
+</div>

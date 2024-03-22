@@ -1,0 +1,44 @@
+<header class="sticky top-4 left-0 m-4 px-4 py-2 bg-white z-10 rounded-lg shadow-md">
+  <nav class="flex items-center gap-2">
+
+    <a href="{% url 'index' %}">
+      <h1 class="text-purple-600 text-xl font-semibold tracking-tighter flex items-center gap-2 align-middle">
+        <span>
+          {% include '_includes/icons/Yahoo.html' with ratio="2em" %}
+        </span>
+        <span>
+          <span>yfinance</span>
+          <span class="hidden md:inline">Tracker</span>
+          <span class="hidden lg:inline">Application</span>
+        </span>
+      </h1>
+    </a>
+
+    <div class="ms-auto">
+      <p class="text-slate-400 font-light text-sm md:text-base uppercase tracking-tighter">
+        Welcome, {{ request.user.username }}
+      </p>
+    </div>
+
+    <div class="relative">
+      <span role="button" class="hover:bg-slate-200 peer/btn block p-1 cursor-pointer duration-150 rounded-full">
+        {% include '_includes/icons/Dots.html' with ratio="1.5em" %}
+      </span>
+
+      <ul class="absolute max-h-0 hover:max-h-80 peer-hover/btn:max-h-80 right-full top-0 bg-white rounded-md shadow-lg divide-y divide-slate-200 overflow-hidden duration-300 w-48 text-sm max-sm:text-xs peer-hover/btn:border hover:border border-slate-200" role="list">
+
+        <li class="duration-150 hover:bg-slate-200">
+          <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button
+              type="submit"
+              class=" hover:bg-slate-200 duration-150 text-center px-6 py-2 block w-full">
+              Logout
+            </button>
+          </form>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</header>

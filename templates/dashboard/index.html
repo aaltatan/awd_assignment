@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/dist/fetchForm.css' %}">
+{% endblock %}
+
+{% block body %}
+
+  {% include '_includes/Alert.html' %}
+
+  <div class="grid gap-2 grid-cols-1 lg:grid-cols-4">
+    
+    <div class="rounded-lg shadow-md p-6">
+      {% include '_includes/FetchForm.html' %}
+    </div>
+
+    <div id="chart-container" class="rounded-lg shadow-md p-6 lg:col-span-3">
+      {% include '_includes/Chart.html' %}
+    </div>
+
+    <div class="rounded-lg shadow-md p-6 lg:col-span-2">
+      {% include '_includes/Prices.html' %}
+    </div>
+
+    <div class="rounded-lg shadow-md p-6 lg:col-span-2">
+      {% include '_includes/History.html' %}
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/fetchData.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/dist/login.css' %}">
+  <style>
+    main {
+      background-image: url("{% static 'imgs/login.jpg' %}");
+      background-size: cover;
+    }
+  </style>
+  <title>Login</title>
+</head>
+<body>
+
+  <main>
+
+    <div class="form">
+
+      <div class="form__header">
+        <h1>yfinance Tracker Application</h1>
+        <p>Please Provide us your credentials</p>
+      </div>
+
+      <form class="form__body" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="form__btn" type="submit">login</button>
+      </form>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

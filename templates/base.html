@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/dist/main.css' %}">
+    {% block styles %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+  </head>
+
+  <body>
+
+    {% include '_includes/Navbar.html' %}
+    <main class="mx-4">{% block body %}{% endblock %}</main>
+    {% include '_includes/Footer.html' %}
+
+    {% block scripts %}{% endblock %}
+
+  </body>
+
+</html>

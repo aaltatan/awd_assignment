@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form {
+  height: 100vh;
+  width: min(100%, 400px);
+  margin-left: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 1em;
+
+  @media (max-width: 540px) {
+    width: 100%;
+  }
+
+  .form__header {
+    text-align: center;
+    margin-block: 1em;
+    color: white;
+    h1 {
+      font-size: 1.75rem;
+      letter-spacing: -1.5px;
+    }
+    p {
+      font-size: 0.75rem;
+      color: hsl(0, 0%, 50%);
+    }
+  }
+
+  .form__body {
+    .errorlist {
+      list-style: none;
+      li {
+        display: block;
+        padding: 1.5em;
+        margin-block: 2em;
+        font-size: 0.75rem;
+        background-color: hsl(297, 72%, 50%);
+        color: white;
+        border-radius: 0.5em;
+        font-weight: bolder;
+      }
+    }
+    > div {
+      position: relative;
+    }
+    > div > label {
+      position: absolute;
+      top: 0.5em;
+      left: 0.5em;
+      font-size: 0.875em;
+      letter-spacing: -1.2px;
+      color: white;
+    }
+    > div > input {
+      display: block;
+      width: 100%;
+      padding: 1.5em 1em 0.5em;
+      margin-bottom: 0.5em;
+      background-color: hsl(0, 0%, 10%);
+      color: white;
+      border-radius: 0.5em;
+      border: none;
+      outline: none;
+      font-size: 1.125rem;
+      &:hover,
+      &:focus {
+        background-color: hsl(0, 0%, 14%);
+      }
+      &:focus {
+        outline: 2px solid hsl(0, 0%, 18%);
+      }
+    }
+  }
+
+  .form__btn {
+    display: block;
+    width: 100%;
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    background-color: hsl(297, 72%, 50%);
+    color: white;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+    font-size: 1.125rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: hsl(297, 72%, 46%);
+    }
+    &:focus {
+      border: 4px solid hsl(297, 72%, 42%);
+    }
+  }
+}

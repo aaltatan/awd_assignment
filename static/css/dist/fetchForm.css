@@ -1,0 +1,60 @@
+form > div {
+  margin-bottom: 0.75em;
+}
+
+form > div {
+  
+  label,
+  legend {
+    font-size: 0.875rem;
+    font-weight: lighter;
+    color: hsl(0, 0%, 30%);
+  }
+
+  &:has(input[required]) label::after {
+    content: '*';
+    color: red;
+    font-size: 1rem;
+  }
+
+  .errorlist {
+    li {
+      font-size: .675rem;
+      color: red;
+      font-weight: bold;
+    }
+    & ~ input,
+    & ~ select {
+      background-color: hsl(0, 100%, 80%) !important;
+      color: hsl(0, 100%, 30%) !important;
+    }
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.5em 0.75em;
+    outline: none;
+    border: none;
+    background-color: hsl(0, 0%, 97%);
+    border-radius: 0.5em;
+    &:hover,
+    &:focus {
+      background-color: hsl(0, 0%, 93%);
+    }
+  }
+
+  select {
+    padding: 0.125em 0.25em;
+    margin: 0.125em;
+    outline: none;
+    border: none;
+    background-color: hsl(0, 0%, 97%);
+    border-radius: 0.5em;
+    &:hover,
+    &:focus {
+      background-color: hsl(0, 0%, 93%);
+    }
+  }
+  
+}

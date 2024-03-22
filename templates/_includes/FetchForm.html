@@ -1,0 +1,16 @@
+<form action="{% url 'index' %}" method="POST" id="ticker-form">
+  <h1 class="mb-2 font-semibold tracking-tighter text-xl flex items-center gap-1 text-purple-600">
+    <span>
+      {% include '_includes/icons/Globe.html' with ratio="1em" %}
+    </span>
+    <span>Tracker</span>
+  </h1>
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit" class="bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-lg px-3 py-1 text-white font-semibold tracking-tighter w-full mx-auto outline-none border-none flex items-center justify-center gap-2">
+    <span>Fetch</span>
+    <span class="animate-spin hidden" id="spinner">
+      {% include '_includes/icons/Spinner.html' with ratio='1em' %}
+    </span>
+  </button>
+</form>
