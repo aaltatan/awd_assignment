@@ -119,6 +119,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
   BASE_DIR / 'static',
 ]
+# After adding STATIC_ROOT run this command python manage.py collectstatic
+# to copy admin static files into your project static dir
+# STATIC_ROOT = 'var/www/<your-project>/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
