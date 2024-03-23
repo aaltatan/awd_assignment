@@ -178,21 +178,22 @@ module.exports = {
 
 and these are some images from my site, showing styles which i make:  
 
-<img src='./assets/empty.png'>
-<img src='./assets/test-1.png'>
-<img src='./assets/test-2.png'>
+![image](./assets/empty.png)
+![image](./assets/test-1.png)
+![image](./assets/test-2.png)
 
 and i used pure css (static/dist/login.css, static/dist/fetchForm.css) also in styling formats because it's difficult to handle rendered html forms directly in django  
 
 login page (pure css):  
 
-<img src='./assets/login.png'>
+<!-- <img src='./assets/login.png'> -->
+![image](./assets/login.png)
 
 i design my website like a dashboard and also it's responsive  
 
-<img src='./assets/responsive (1).png'>
-<img src='./assets/responsive (3).png'>
-<img src='./assets/responsive (2).png'>
+![./assets/responsive(1).png](./assets/responsive(1).png)
+![./assets/responsive(3).png](./assets/responsive(3).png)
+![./assets/responsive(2).png](./assets/responsive(2).png)
 
 
 ### Python
@@ -373,7 +374,7 @@ you can test the CLI app by running this command
 
 result:
 
-<img src='./assets/cli.png'>
+![./assets/cli.png](./assets/cli.png)
 
 ### Django
 
