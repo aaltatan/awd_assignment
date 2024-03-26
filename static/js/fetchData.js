@@ -13,7 +13,7 @@ alertCloseBtn.addEventListener("click", () => {
 
 tickerForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const regex = /^[a-z]{4,10}$/;
+  const regex = /^[a-zA-Z\.:\-]{3,20}$/;
 
   if (!tickerSymbol.value.match(regex)) {
     makeAlert('Please Enter a valid symbol like: "aapl", "amzn"');

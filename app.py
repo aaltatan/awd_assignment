@@ -30,7 +30,7 @@ def get_args() -> dict[str, str | None]:
   data: dict = {
     'symbol': {
       'input_msg': 'Please provide me ticker symbol which you want to get data about [ticker symbol]: ',
-      'regex': re.compile(r'^[a-z]{4,10}$'),
+      'regex': re.compile(r'^[A-z\.:\-]{3,20}$'),
       'error_msg': 'Enter a valid ticker symbol please, like: "AMZN", "AAPL", ...',
       'optional': False,
     },

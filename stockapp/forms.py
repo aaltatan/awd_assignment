@@ -6,8 +6,8 @@ from datetime import datetime
 
 ticker_validators = [
     RegexValidator(
-        r"^[a-z]{4,10}$", 
-        message='Please Enter a valid symbol like: "aapl", "amzn"'
+        r"^[A-z\.:\-]{3,20}$", 
+        message='Please Enter a valid symbol like: "aapl", "amzn" , "tsla"'
     )
 ]
 years: range = range(2000, 2025)
@@ -15,8 +15,8 @@ years: range = range(2000, 2025)
 
 class StockForm(forms.Form):
     ticker_symbol = forms.CharField(
-        max_length=10, 
-        min_length=4, 
+        max_length=20, 
+        min_length=3, 
         validators=ticker_validators, 
         label="Ticker Symbol"
     )

@@ -12,7 +12,12 @@ README.md File: https://github.com/aaltatan/awd_assignment/blob/main/README.md
 - ``` git clone https://github.com/aaltatan/awd_assignment.git ```
 - ``` cd awd_assignment ```
 - ``` npm install ```
-- ``` pip install -r requirements.txt ```
+- ``` pip install -r requirements.txt ```  
+
+if you want to run the server **locally** run this command  
+``` python ./manage.py runserver --insecure ```  
+adding ```--insecure``` because DEBUG=False in ```settings.py```  
+
 
 ## Technologies Used
 - Python
@@ -293,7 +298,7 @@ def get_args() -> dict[str, str | None]:
   data: dict = {
     'symbol': {
       'input_msg': 'Please provide me ticker symbol which you want to get data about [ticker symbol]: ',
-      'regex': re.compile(r'^[a-z]{4,10}$'),
+      'regex': re.compile(r'^[A-z\.:\-]{3,20}$'),
       'error_msg': 'Enter a valid ticker symbol please, like: "AMZN", "AAPL", ...',
       'optional': False,
     },
@@ -438,7 +443,7 @@ price_validators = [
 ]
 
 class StockData(models.Model):
-  ticker_symbol = models.CharField(max_length=10)
+  ticker_symbol = models.CharField(max_length=20)
   date = models.DateField()
   open_price = models.DecimalField(max_digits=10, 
                                    decimal_places=2,
@@ -622,7 +627,7 @@ alertCloseBtn.addEventListener("click", () => {
 
 tickerForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const regex = /^[a-z]{4,10}$/;
+  const regex = /^[A-z\.:\-]{3,20}$/;
 
   if (!tickerSymbol.value.match(regex)) {
     makeAlert('Please Enter a valid symbol like: "aapl", "amzn"');
